@@ -1,0 +1,408 @@
+import React from "react";
+
+const HEADSHOT_SRC = "https://cdn-icons-png.flaticon.com/256/4042/4042171.png";
+
+const experience = [
+  {
+    role: "Internship",
+    org: "ModelyzeLabs AI, Bengaluru",
+    date: "JAN 2026 — APR 2026",
+    text: "Worked as DPC with experience in data processing and documentation. Knowledge of MEP systems including HVAC, plumbing, and fire protection. Skilled in ANSYS, Finite Element Analysis, and engineering analysis.",
+  },
+  {
+    role: "Internship",
+    org: "Bosch, Bengaluru",
+    date: "DEC 2025 — JAN 2026",
+    text: "Hands-on internship supporting design, analysis, and testing activities. Assisted senior engineers in product development, performed basic simulations, and contributed to technical documentation.",
+  },
+  {
+    role: "Intern, Wheel & Axle Manufacturing",
+    org: "Rail Wheel Factory, Bangalore",
+    date: "AUG 2022 — SEP 2022",
+    bullets: [
+      "Gained practical exposure to large-scale manufacturing processes in wheel and axle production",
+      "Observed and learned about quality control and machining operations in railway components",
+    ],
+  },
+];
+
+const projects = [
+  {
+    tag: "FEA",
+    sheet: "SHEET 01/03",
+    title: "Failure Analysis of Bracket using ANSYS Workbench",
+    bullets: [
+      "Performed static and fatigue failure analysis of a steel bracket",
+      "Evaluated stress distribution, deformation, fatigue life, and factor of safety under cyclic loading",
+      "Conducted parameterization studies varying thickness and width to propose optimized designs",
+    ],
+    tags: ["ANSYS Workbench", "Fatigue Analysis", "Steel Bracket"],
+    date: "JUL 2025 — AUG 2025",
+  },
+  {
+    tag: "ENERGY",
+    sheet: "SHEET 02/03",
+    title: "Charging of EV Batteries using Wind Energy",
+    bullets: [
+      "Designed a wind energy-based charging system for EV batteries",
+      "Integrated energy storage systems for stable power supply",
+      "Contributed to sustainable transportation by reducing reliance on fossil fuels",
+    ],
+    tags: ["Wind Energy", "EV Charging", "Energy Storage"],
+    date: "JUN 2021 — NOV 2022",
+  },
+  {
+    tag: "SAFETY",
+    sheet: "SHEET 03/03",
+    title: "Automatic Fire Protection System",
+    bullets: [
+      "Designed an automatic fire detection and suppression system",
+      "Integrated sprinklers, alarms, and suppression systems",
+      "Ensured compliance with safety codes and performed risk assessments",
+    ],
+    tags: ["Fire Detection", "Safety Codes", "Risk Assessment"],
+    date: "NOV 2022 — JUN 2023",
+  },
+];
+
+const achievements = [
+  { title: "Increased Charging Efficiency", text: "Achieved a 25% efficiency increase in an EV battery charging system using renewable energy." },
+  { title: "Optimized Bracket Design", text: "Reduced failure rates by 15% through optimized design solutions in ANSYS Workbench." },
+  { title: "Ensured Safety Compliance", text: "Ensured compliance with safety codes for fire systems, covering over 10,000 square feet." },
+  { title: "Improved Manufacturing Output", text: "Completed an internship at Rail Wheel Factory, contributing to a 10% production increase." },
+];
+
+const skills = [
+  { group: "CAE Software", items: ["ANSYS", "Abaqus"] },
+  { group: "CAD Software", items: ["Solid Edge", "SolidWorks"] },
+  { group: "Programming", items: ["Python", "Java"] },
+  { group: "MS Office", items: ["Word", "PowerPoint"] },
+];
+
+const certifications = [
+  {
+    badge: "ELITE",
+    title: "Product Design and Manufacturing",
+    issuer: "NPTEL / IIT Kanpur · 12-week course · 4 credits",
+    stat: "64%",
+    date: "JAN — APR 2026",
+  },
+  {
+    badge: "ELITE",
+    title: "Processing of Polymers and Polymer Composites",
+    issuer: "NPTEL / IIT Roorkee · 8-week course · 3 credits",
+    stat: "78%",
+    date: "JAN — MAR 2026",
+  },
+  {
+    badge: "COURSE",
+    title: "Abaqus CAE: Static and Dynamic Analysis",
+    issuer: "Udemy · 12 total hours",
+    stat: "COMPLETED",
+    date: "APR 2026",
+  },
+];
+
+const education = [
+  { deg: "M.Tech in Machine Design", org: "B.M.S College of Engineering, Bengaluru", meta: "12/2024 · CGPA 8.9/10.0" },
+  { deg: "B.E. Mechanical Engineering", org: "G.M. Institute of Technology, Davanagere", meta: "09/2019 — 07/2023 · CGPA 8.2/10.0" },
+];
+
+const strengths = [
+  "Excellent analytical and creative skills",
+  "Structured and strong teamwork",
+  "Independent and strong problem-solving skills",
+  "Time management",
+];
+
+const languages = ["English — Native", "Hindi — Native", "Urdu — Native", "Kannada — Native"];
+
+function SectionHead({ num, title }) {
+  return (
+    <div className="flex items-baseline gap-3 mb-7">
+      <span className="font-mono text-xs font-bold" style={{ color: "#1C3A5E" }}>{num}</span>
+      <h2
+        className="text-xs font-bold tracking-[0.16em] uppercase m-0"
+        style={{ fontFamily: "'Space Grotesk',sans-serif", color: "#1C3A5E" }}
+      >
+        {title}
+      </h2>
+      <span className="flex-1 h-px" style={{ background: "#D8CFBE" }} />
+    </div>
+  );
+}
+
+export default function Portfolio() {
+  const inkSoft = "#5C5648";
+  return (
+    <div
+      className="min-h-screen w-full"
+      style={{
+        background: "#F4F0E8",
+        color: "#1A1A18",
+        fontFamily: "'Inter',sans-serif",
+      }}
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+      `}</style>
+
+      <div className="max-w-4xl mx-auto px-6">
+        {/* Hero / title block */}
+        <header className="pt-14">
+          <div className="border-[1.5px] grid grid-cols-1 sm:grid-cols-[1.6fr_auto_1fr]" style={{ borderColor: "#1A1A18", background: "#FBF9F4" }}>
+            <div className="p-7 sm:border-r-[1.5px] border-b-[1.5px] sm:border-b-0 order-1" style={{ borderColor: "#1A1A18" }}>
+              <p className="font-mono text-[11px] tracking-[0.14em] uppercase font-semibold mb-3" style={{ color: "#1C3A5E" }}>
+                Portfolio — Rev. 2026
+              </p>
+              <h1
+                className="font-bold m-0 mb-2 leading-tight"
+                style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: "clamp(30px,5vw,46px)", color: "#1C3A5E", letterSpacing: "-0.01em" }}
+              >
+                Patel Mohammed Faizan
+              </h1>
+              <p className="font-medium mb-5" style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 18, color: inkSoft }}>
+                Mechanical Engineering Postgraduate · Machine Design
+              </p>
+              <div className="flex flex-wrap gap-x-2 gap-y-1 font-mono text-[12.5px]" style={{ color: inkSoft }}>
+                <span>Bengaluru, Karnataka</span>
+                <span style={{ color: "#D8CFBE" }}>/</span>
+                <a href="mailto:Patelfaizan0602@gmail.com" className="border-b" style={{ color: inkSoft, borderColor: "#D8CFBE" }}>Patelfaizan0602@gmail.com</a>
+                <span style={{ color: "#D8CFBE" }}>/</span>
+                <a href="tel:+916366171427" className="border-b" style={{ color: inkSoft, borderColor: "#D8CFBE" }}>+91 63661 71427</a>
+              </div>
+            </div>
+            <div
+              className="flex flex-col sm:flex-col flex-row items-center justify-center gap-3 sm:gap-0 border-b-[1.5px] sm:border-b-0 sm:border-r-[1.5px] py-2.5 sm:py-0 order-2"
+              style={{ borderColor: "#1A1A18" }}
+            >
+              <span
+                className="font-mono text-[9.5px] tracking-[0.1em] uppercase text-center py-0 sm:py-2 sm:pb-1.5 sm:border-b"
+                style={{ color: "#5C5648", borderColor: "#E4DDCC" }}
+              >
+                Photo ID
+              </span>
+              <img
+                src={HEADSHOT_SRC}
+                alt="Patel Mohammed Faizan"
+                className="block object-cover w-[70px] h-[88px] sm:w-[118px] sm:h-[148px]"
+                style={{ filter: "grayscale(15%) contrast(1.03)" }}
+              />
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-1 font-mono text-[11px] order-3">
+              {[["Discipline", "Mech. Eng."], ["Focus", "Machine Design"], ["Tools", "ANSYS / SolidWorks"], ["Status", "Open to Work"]].map(([label, val], i) => (
+                <div key={i} className="p-3 px-4 flex flex-col justify-center gap-0.5 border-b border-r sm:border-r-0" style={{ borderColor: "#E4DDCC" }}>
+                  <label className="uppercase tracking-[0.1em] text-[9.5px]" style={{ color: inkSoft }}>{label}</label>
+                  <strong className="text-[12px]">{val}</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+        </header>
+
+        {/* Bio */}
+        <section className="pt-11 pb-14">
+          <p className="max-w-2xl text-[17px]" style={{ color: inkSoft }}>
+            I'm Patel Mohammed Faizan, a Mechanical Engineer based in Bengaluru, India, currently specializing in
+            Machine Design. My focus is on how products are engineered to survive real-world loads — using CAD to
+            shape parts and FEA to prove they'll hold up under stress, fatigue, and cyclic loading. I'm building
+            strong foundations in ANSYS, Abaqus, and SolidWorks, while sharpening the fundamentals of materials,
+            manufacturing, and product design that sit underneath any good simulation. I like learning by building —
+            whether that's failure-testing a bracket, designing a charging system, or documenting how a
+            fire-protection system actually gets specified.
+          </p>
+        </section>
+
+        {/* Experience */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="01" title="Experience" />
+          <div className="relative pl-7">
+            <div className="absolute left-[6px] top-1.5 bottom-1.5 w-px" style={{ background: "#D8CFBE" }} />
+            {experience.map((item, i) => (
+              <div key={i} className="relative pb-8 last:pb-0">
+                <div className="absolute -left-[26px] top-1 w-[9px] h-[9px] rounded-full border-2" style={{ background: "#F4F0E8", borderColor: "#1C3A5E" }} />
+                <div className="flex justify-between flex-wrap gap-x-4 gap-y-1 mb-1">
+                  <span className="font-semibold text-[16.5px]" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{item.role}</span>
+                  <span className="font-mono text-[11.5px] whitespace-nowrap" style={{ color: inkSoft }}>{item.date}</span>
+                </div>
+                <div className="font-semibold text-[13.5px] mb-2" style={{ color: "#2E547F" }}>{item.org}</div>
+                {item.text && <p className="text-[14.8px] m-0" style={{ color: inkSoft }}>{item.text}</p>}
+                {item.bullets && (
+                  <ul className="pl-4 mt-1.5 text-[14.8px] m-0" style={{ color: inkSoft }}>
+                    {item.bullets.map((b, j) => <li key={j} className="mb-1">{b}</li>)}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="02" title="Projects" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((p, i) => (
+              <div key={i} className="border flex flex-col" style={{ borderColor: "#1A1A18", background: "#FBF9F4" }}>
+                <div className="flex justify-between items-center px-3.5 py-2 border-b font-mono text-[10.5px] tracking-wide" style={{ borderColor: "#E4DDCC", color: inkSoft }}>
+                  <span>{p.sheet}</span>
+                  <strong style={{ color: "#1C3A5E" }}>{p.tag}</strong>
+                </div>
+                <div className="px-3.5 pt-4 pb-4 flex flex-col flex-1">
+                  <h3 className="text-[16px] m-0 mb-1.5 leading-snug" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{p.title}</h3>
+                  <ul className="pl-4 text-[13.5px] flex-1 m-0" style={{ color: inkSoft }}>
+                    {p.bullets.map((b, j) => <li key={j} className="mb-1">{b}</li>)}
+                  </ul>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {p.tags.map((t, j) => (
+                      <span
+                        key={j}
+                        className="font-mono text-[10px] px-2 py-1 rounded-full border"
+                        style={{ color: "#2E547F", background: "#ECE6D9", borderColor: "#D8CFBE" }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="font-mono text-[10.5px] mt-2.5 pt-2.5 border-t border-dashed" style={{ borderColor: "#D8CFBE", color: inkSoft }}>{p.date}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Achievements */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="03" title="Key Achievements" />
+          <div className="grid gap-x-7 gap-y-5 sm:grid-cols-2">
+            {achievements.map((a, i) => (
+              <div key={i} className="pl-3.5 border-l-2" style={{ borderColor: "#1C3A5E" }}>
+                <strong className="block text-[15px] mb-1" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{a.title}</strong>
+                <span className="text-[13.8px]" style={{ color: inkSoft }}>{a.text}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="04" title="Skills" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {skills.map((s, i) => (
+              <div key={i}>
+                <h4 className="font-mono text-[10.5px] tracking-[0.1em] uppercase mb-2.5" style={{ color: "#1C3A5E" }}>{s.group}</h4>
+                <ul className="list-none p-0 m-0">
+                  {s.items.map((it, j) => (
+                    <li key={j} className="text-[15px] py-1.5 border-b last:border-b-0" style={{ fontFamily: "'Space Grotesk',sans-serif", borderColor: "#E4DDCC" }}>{it}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Certifications */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="05" title="Certifications" />
+          <div className="grid gap-3">
+            {certifications.map((c, i) => (
+              <div
+                key={i}
+                className="grid gap-1 sm:gap-4 items-center border p-4 px-5"
+                style={{ borderColor: "#D8CFBE", background: "#FBF9F4", gridTemplateColumns: "auto 1fr auto" }}
+              >
+                <span
+                  className="font-mono text-[10px] font-bold tracking-[0.08em] text-white px-2.5 py-1.5 whitespace-nowrap self-start"
+                  style={{ background: "#1C3A5E" }}
+                >
+                  {c.badge}
+                </span>
+                <div>
+                  <h3 className="text-[15.5px] m-0 mb-1" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{c.title}</h3>
+                  <span className="text-[13px]" style={{ color: inkSoft }}>{c.issuer}</span>
+                </div>
+                <div className="font-mono text-[11px] text-right whitespace-nowrap" style={{ color: inkSoft }}>
+                  <strong className="block text-[12.5px]" style={{ color: "#1C3A5E" }}>{c.stat}</strong>
+                  {c.date}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Education */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="06" title="Education" />
+          <div className="grid gap-4">
+            {education.map((e, i) => (
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-1.5 sm:gap-5 items-baseline border-b last:border-b-0 pb-3.5" style={{ borderColor: "#E4DDCC" }}>
+                <div>
+                  <div className="font-semibold text-[16px]" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{e.deg}</div>
+                  <div className="text-[13.5px] font-semibold" style={{ color: "#2E547F" }}>{e.org}</div>
+                </div>
+                <div className="font-mono text-[11.5px] whitespace-nowrap sm:text-right" style={{ color: inkSoft }}>{e.meta}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Strengths & Languages */}
+        <section className="py-14 border-t" style={{ borderColor: "#E4DDCC" }}>
+          <SectionHead num="07" title="Strengths & Languages" />
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-mono text-[10.5px] tracking-[0.1em] uppercase mb-3" style={{ color: "#1C3A5E" }}>Strengths</h4>
+              <ul className="list-none p-0 m-0">
+                {strengths.map((s, i) => (
+                  <li key={i} className="text-[14.5px] mb-1.5 pl-4 relative" style={{ color: inkSoft }}>
+                    <span className="absolute left-0" style={{ color: "#1C3A5E" }}>—</span>{s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-mono text-[10.5px] tracking-[0.1em] uppercase mb-3" style={{ color: "#1C3A5E" }}>Languages</h4>
+              <div className="flex flex-wrap gap-2">
+                {languages.map((l, i) => (
+                  <span key={i} className="border text-[13px] font-mono px-3 py-1.5" style={{ borderColor: "#D8CFBE", color: inkSoft }}>{l}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-14">
+          <div className="border-[1.5px] p-8 flex flex-wrap justify-between items-center gap-6" style={{ borderColor: "#1A1A18", background: "#FBF9F4" }}>
+            <div>
+              <h3 className="text-[22px] m-0 mb-2" style={{ fontFamily: "'Space Grotesk',sans-serif", color: "#1C3A5E" }}>Let's build something.</h3>
+              <p className="m-0 text-sm" style={{ color: inkSoft }}>Open to opportunities in Machine Design, CAE, and product engineering.</p>
+            </div>
+            <div className="flex gap-3 flex-wrap">
+              <a
+                href="mailto:Patelfaizan0602@gmail.com"
+                className="font-mono text-[12.5px] no-underline px-4 py-2.5 border transition-colors"
+                style={{ borderColor: "#1A1A18", color: "#1A1A18" }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#1C3A5E"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "#1C3A5E"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#1A1A18"; e.currentTarget.style.borderColor = "#1A1A18"; }}
+              >
+                Email
+              </a>
+              <a
+                href="tel:+916366171427"
+                className="font-mono text-[12.5px] no-underline px-4 py-2.5 border transition-colors"
+                style={{ borderColor: "#1A1A18", color: "#1A1A18" }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#1C3A5E"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "#1C3A5E"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#1A1A18"; e.currentTarget.style.borderColor = "#1A1A18"; }}
+              >
+                Call
+              </a>
+            </div>
+          </div>
+          <p className="text-center font-mono text-[10.5px] mt-7 tracking-wide" style={{ color: inkSoft }}>
+            DRAWN BY P.M. FAIZAN · SCALE 1:1 · BENGALURU, KARNATAKA
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}

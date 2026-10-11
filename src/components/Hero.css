@@ -1,0 +1,239 @@
+.hero {
+  padding-top: clamp(48px, 8vh, 92px);
+  padding-bottom: clamp(28px, 5vh, 52px);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(36px, 6vw, 64px);
+  align-items: end;
+}
+
+@media (min-width: 860px) {
+  .hero__inner {
+    grid-template-columns: 1fr 0.72fr;
+  }
+}
+
+/* --- Left column --- */
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-soft);
+  margin-bottom: clamp(18px, 3vw, 28px);
+}
+
+.hero__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+
+.hero__name {
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  font-variation-settings: 'wdth' 100;
+  letter-spacing: -0.025em;
+  line-height: 0.96;
+  margin-bottom: clamp(18px, 3vw, 26px);
+}
+
+.hero__name-line {
+  display: block;
+}
+
+.hero__name-line + .hero__name-line {
+  color: var(--accent);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.0625rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.hero__disciplines {
+  color: var(--ink-muted);
+  margin-bottom: clamp(26px, 4vw, 38px);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.hero__button--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.hero__button--primary:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.hero__button--ghost {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.hero__button--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Portrait with dimension callouts --- */
+
+.hero__portrait {
+  position: relative;
+  margin: 0;
+  padding-right: 34px;
+  padding-bottom: 34px;
+  max-width: 380px;
+  width: 100%;
+  justify-self: start;
+}
+
+@media (min-width: 860px) {
+  .hero__portrait {
+    justify-self: end;
+  }
+}
+
+.hero__frame {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 7px;
+  background: var(--surface);
+}
+
+.hero__frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 78 / 100;
+  object-fit: cover;
+  border-radius: 1px;
+  filter: var(--portrait-filter);
+}
+
+.hero__dim {
+  position: absolute;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  stroke: var(--ink-muted);
+  stroke-width: 1.1;
+  opacity: 0.6;
+}
+
+.hero__dim--v {
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: calc(100% - 34px);
+}
+
+.hero__dim--h {
+  left: 0;
+  bottom: 0;
+  height: 34px;
+  width: calc(100% - 34px);
+}
+
+.hero__dim-label {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  background: var(--bg);
+  padding: 2px 3px;
+}
+
+.hero__dim-label--v {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.hero__dim-label--h {
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* --- Spec strip --- */
+
+.hero__spec {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: clamp(40px, 6vw, 64px) 0 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+@media (min-width: 760px) {
+  .hero__spec {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.hero__spec-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.hero__spec-cell:nth-child(2n) {
+  border-right: 0;
+}
+
+.hero__spec-cell:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+@media (min-width: 760px) {
+  .hero__spec-cell {
+    border-bottom: 0;
+  }
+  .hero__spec-cell:nth-child(2n) {
+    border-right: 1px solid var(--line);
+  }
+  .hero__spec-cell:last-child {
+    border-right: 0;
+  }
+}
+
+.hero__spec-cell dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}

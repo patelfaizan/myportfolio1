@@ -1,0 +1,118 @@
+.rail {
+  position: fixed;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  pointer-events: none;
+}
+
+@media (min-width: 1240px) {
+  .rail {
+    display: flex;
+  }
+}
+
+.rail__cap {
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  opacity: 0.7;
+}
+
+.rail__body {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  height: 46vh;
+  min-height: 300px;
+}
+
+.rail__track {
+  position: relative;
+  width: 6px;
+  border: 1px solid var(--line);
+  border-radius: 1px;
+  background: var(--surface-sunk);
+  overflow: hidden;
+}
+
+/* The five-stop FEA result ramp — the only place it appears on the site.
+   The ramp is full height and the clip grows, so a given colour always sits
+   at the same point on the scale, exactly like a real result legend. */
+.rail__clip {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 90ms linear;
+}
+
+.rail__ramp {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 46vh;
+  min-height: 300px;
+  opacity: var(--rail-opacity);
+  background: linear-gradient(
+    to top,
+    var(--ramp-1) 0%,
+    var(--ramp-2) 25%,
+    var(--ramp-3) 50%,
+    var(--ramp-4) 75%,
+    var(--ramp-5) 100%
+  );
+}
+
+.rail__ticks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: auto;
+}
+
+.rail__tick {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  color: var(--ink-muted);
+  opacity: 0.55;
+  transition: opacity 160ms ease, color 160ms ease;
+}
+
+.rail__tick-line {
+  width: 8px;
+  height: 1px;
+  background: currentColor;
+  transition: width 160ms ease;
+}
+
+.rail__tick-label {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.rail__tick:hover {
+  opacity: 1;
+}
+
+.rail__tick[aria-current='true'] {
+  opacity: 1;
+  color: var(--ink);
+}
+
+.rail__tick[aria-current='true'] .rail__tick-line {
+  width: 16px;
+  background: var(--accent);
+}

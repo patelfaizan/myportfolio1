@@ -1,0 +1,66 @@
+/* ---------------------------------------------------------------
+   Design tokens — palette "Anodised"
+   Colours are declared twice: once per theme. Components must never
+   use a literal hex value, only var(--token).
+   --------------------------------------------------------------- */
+
+:root[data-theme='light'] {
+  --bg: #dee1dc;
+  --surface: #eff1ed;
+  --surface-sunk: #d3d7d2;
+  --ink: #171b1a;
+  --ink-muted: #565e5b;
+  --line: #c0c6c0;
+  --accent: #8a6a1f;
+  --accent-soft: #1e5a63;
+  --on-accent: #f4f6f3;
+  --error: #b3402c;
+  --portrait-filter: saturate(0.88) contrast(1.02);
+  --rail-opacity: 0.5;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #14181a;
+  --surface: #1d2326;
+  --surface-sunk: #0f1315;
+  --ink: #e6e9e5;
+  --ink-muted: #98a29e;
+  --line: #2e373a;
+  --accent: #d9a441;
+  --accent-soft: #4fb3a8;
+  --on-accent: #14181a;
+  --error: #e4705c;
+  --portrait-filter: saturate(0.82) contrast(1.05) brightness(0.94);
+  --rail-opacity: 0.55;
+  color-scheme: dark;
+}
+
+:root {
+  /* Type */
+  --font-logo: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-display: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --fs-hero: clamp(2.6rem, 6vw, 4.6rem);
+  --fs-h2: clamp(1.5rem, 2.4vw, 2rem);
+  --fs-h3: 1.125rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-mono: 0.75rem;
+
+  /* Layout */
+  --shell: 1120px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --section-gap: clamp(72px, 10vh, 128px);
+  --nav-h: 68px;
+  --radius: 2px;
+
+  /* The FEA result ramp. Used ONLY by the scale rail. */
+  --ramp-1: #2c5ca8;
+  --ramp-2: #2e9ba8;
+  --ramp-3: #6fbf52;
+  --ramp-4: #e0b33a;
+  --ramp-5: #c4482f;
+}

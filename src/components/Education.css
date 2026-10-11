@@ -1,0 +1,54 @@
+.edu__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.edu__row:first-child {
+  padding-top: 0;
+}
+
+.edu__row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 700px) {
+  .edu__row {
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 28px;
+  }
+}
+
+.edu__degree {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.edu__org {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--accent-soft);
+}
+
+.edu__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+@media (min-width: 700px) {
+  .edu__meta {
+    align-items: flex-end;
+  }
+}
+
+.edu__cgpa {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink);
+}

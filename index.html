@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <title>Patel Mohammed Faizan — Machine Design, CAE &amp; FEA</title>
+    <meta name="description" content="Mechanical engineering postgraduate specialising in Machine Design. Structural FEA, fatigue analysis and CAD using ANSYS, Abaqus and SolidWorks. Based in Bengaluru, India." />
+    <meta name="author" content="Patel Mohammed Faizan" />
+    <meta name="theme-color" content="#DEE1DC" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Patel Mohammed Faizan — Machine Design, CAE &amp; FEA" />
+    <meta property="og:description" content="Mechanical engineering postgraduate specialising in Machine Design. Structural FEA, fatigue analysis and CAD." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Sets the theme before React mounts so dark-mode visitors never see a light flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          var theme = stored === 'light' || stored === 'dark' ? stored : system;
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+@media (min-width: 860px) {
+  .contact__grid {
+    grid-template-columns: 0.85fr 1fr;
+  }
+}
+
+/* --- Left column --- */
+
+.contact__intro {
+  max-width: 40ch;
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+  margin-bottom: 28px;
+}
+
+.contact__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact__list a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  width: fit-content;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.contact__list a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.contact__socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.contact__socials a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Form --- */
+
+.contact__form-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: clamp(20px, 3vw, 30px);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.field__required {
+  color: var(--accent);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: var(--fs-small);
+  transition: border-color 120ms ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 130px;
+  font-family: var(--font-body);
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--ink-muted);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+}
+
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+.field__error {
+  font-size: 0.8125rem;
+  color: var(--error);
+}
+
+.field__foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.field__count {
+  font-size: 0.6875rem;
+  white-space: nowrap;
+}
+
+.contact__form-error {
+  font-size: 0.875rem;
+  color: var(--error);
+  border-left: 2px solid var(--error);
+  padding-left: 12px;
+}
+
+.contact__form-error a {
+  color: var(--error);
+  text-decoration: underline;
+}
+
+.contact__submit {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.contact__submit:hover:not(:disabled) {
+  background: transparent;
+  color: var(--accent);
+}
+
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* --- Success panel --- */
+
+.contact__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 260px;
+  justify-content: center;
+}
+
+.contact__panel-title {
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.contact__panel p {
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+}
+
+.contact__reset {
+  margin-top: 8px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.contact__reset:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

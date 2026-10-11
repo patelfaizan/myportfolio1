@@ -29,7 +29,7 @@ const experience = [
 const projects = [
   {
     tag: "FEA",
-    sheet: "SHEET 01/03",
+    sheet: "SHEET 01/04",
     title: "Failure Analysis of Bracket using ANSYS Workbench",
     bullets: [
       "Performed static and fatigue failure analysis of a steel bracket",
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     tag: "ENERGY",
-    sheet: "SHEET 02/03",
+    sheet: "SHEET 02/04",
     title: "Charging of EV Batteries using Wind Energy",
     bullets: [
       "Designed a wind energy-based charging system for EV batteries",
@@ -53,12 +53,30 @@ const projects = [
   },
   {
     tag: "SAFETY",
-    sheet: "SHEET 03/03",
+    sheet: "SHEET 03/04",
     title: "Automatic Fire Protection System",
     bullets: [
       "Designed an automatic fire detection and suppression system",
       "Integrated sprinklers, alarms, and suppression systems",
       "Ensured compliance with safety codes and performed risk assessments",
+    ],
+    tags: ["Fire Detection", "Safety Codes", "Risk Assessment"],
+    date: "NOV 2022 — JUN 2023",
+  },
+  {
+    tag: "ML prediction",
+    sheet: "SHEET 04/04",
+    title: "Machine Learning based prediction of Fatigue Crack Growth and Fatigue Life",
+    bullets: [
+      "Developed a dual-output machine learning framework predicting fatigue crack 
+        growth rate (da/dN) and remaining fatigue life in SAE 1020 steel across stress 
+        ratios R = 0.1–0.8",
+      "Trained and compared five models – Linear Regression, Random Forest, Gradient 
+        Boosting, a residual deep network (FCGR-Net) and a Physics-Informed Neural 
+        Network – on a 2,312-sample dataset of five specimen geometries ",
+      "Validated predictions against the Paris–Erdogan analytical solution and an ANSYS 
+        Workbench SMART crack-growth model of CTS01, with SIF within 0.73% of the 
+        analytical result ",
     ],
     tags: ["Fire Detection", "Safety Codes", "Risk Assessment"],
     date: "NOV 2022 — JUN 2023",

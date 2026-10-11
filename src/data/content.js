@@ -117,6 +117,20 @@ export const projects = [
     ],
     tools: ['Fire Detection', 'Safety Codes', 'Risk Assessment'],
   },
+  {
+    id: 'ml',
+    domain: 'Machine Learning',
+    year: '2026',
+    title: 'Machine Learning-Based Prediction of Fatigue Crack Growth Rate and Fatigue Life',
+    period: 'JAN 2026 — SEP 2026',
+    bullets: [
+      'Developed a dual-output machine learning framework predicting fatigue crack growth rate (da/dN) and remaining fatigue life in SAE 1020 steel across stress ratios R = 0.1–0.8',
+      'Trained and compared five models – Linear Regression, Random Forest, Gradient Boosting, a residual deep network (FCGR-Net) and a Physics-Informed Neural Network – on a 2,312-sample dataset of five specimen geometries',
+      'Validated predictions against the Paris–Erdogan analytical solution and an ANSYS Workbench SMART crack-growth model of CTS01, with SIF within 0.73% of the analytical result',
+    ],
+    tools: ['Fatigue Life', 'FCGR', 'Machine Learning Prediction'],
+  },
+  
 ]
 
 export const skills = [
@@ -172,10 +186,10 @@ export const strengths = [
 ]
 
 export const languages = [
-  { name: 'English', level: 'Native' },
-  { name: 'Hindi', level: 'Native' },
+  { name: 'English', level: 'Fluent' },
+  { name: 'Hindi', level: 'Professional' },
   { name: 'Urdu', level: 'Native' },
-  { name: 'Kannada', level: 'Native' },
+  { name: 'Kannada', level: 'Professional' },
 ]
 
 export const contactCopy = {

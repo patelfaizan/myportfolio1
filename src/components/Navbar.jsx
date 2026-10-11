@@ -106,39 +106,33 @@ export function Navbar({ theme, onToggleTheme, activeId }) {
       </div>
 
       {menuOpen && (
-      <div className="navbar__panel" id="mobile-menu" ref={panelRef}>
-        <div className="navbar__panel-inner shell">
-          <ul className="navbar__panel-list">
-            {navItems.map((item, index) => {
-              // Dynamically formats the loop index (0, 1, 2...) into "01", "02", "03..."
-              const autoNumber = String(index + 1).padStart(2, '0');
-              
-              return (
+        <div className="navbar__panel" id="mobile-menu" ref={panelRef}>
+          <div className="navbar__panel-inner shell">
+            <ul className="navbar__panel-list">
+              {navItems.map((item) => (
                 <li key={item.id}>
                   <a href={`#${item.id}`} onClick={closeMenu}>
-                    <span className="navbar__panel-tick mono-label">{autoNumber}</span>
+                    <span className="navbar__panel-tick mono-label">{item.tick}</span>
                     {item.label}
                   </a>
                 </li>
-              );
-            })}
-            <li>
-              <a href={resumeHref} target="_blank" rel="noreferrer" onClick={closeMenu}>
-                <span className="navbar__panel-tick mono-label">07</span>
-                Resume
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={closeMenu}>
-                <span className="navbar__panel-tick mono-label">08</span>
-                Contact
-              </a>
-            </li>
-          </ul>
+              ))}
+              <li>
+                <a href={resumeHref} target="_blank" rel="noreferrer" onClick={closeMenu}>
+                  <span className="navbar__panel-tick mono-label">PDF</span>
+                  Resume
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={closeMenu}>
+                  <span className="navbar__panel-tick mono-label">CONTACT</span>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    )}
-
+      )}
     </header>
   )
 }

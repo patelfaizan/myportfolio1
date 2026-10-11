@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading'
 import './Contact.css'
 
 const MESSAGE_MAX = 1500
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-z]{2,}\$/i
 const ENDPOINT = 'https://api.web3forms.com/submit'
 
 const EMPTY = { name: '', email: '', message: '', botcheck: '' }
@@ -44,13 +44,13 @@ export function Contact() {
   const [submittedEmail, setSubmittedEmail] = useState('')
   const formRef = useRef(null)
 
-  const accessKey = import.meta.env.VITE_WEB3FORMS_KEY
+  // Swapped to your explicit Web3Forms access key
+  const accessKey = "195bf606-bfaf-4844-bba9-817c69f5b174"
 
   const handleChange = (event) => {
     const { name, value } = event.target
     setValues((current) => ({ ...current, [name]: value }))
 
-    // Once a field has been touched, validate live so errors clear as they are fixed.
     if (touched[name]) {
       setErrors((current) => ({ ...current, [name]: validateField(name, value) }))
     }
@@ -80,7 +80,6 @@ export function Contact() {
       return
     }
 
-    // Honeypot: a bot fills this, a person never sees it.
     if (values.botcheck) return
 
     setStatus('submitting')
@@ -168,6 +167,15 @@ export function Contact() {
               </div>
             ) : (
               <form ref={formRef} className="contact__form" onSubmit={handleSubmit} noValidate>
+                {/* Honeypot field for bots */}
+                <input 
+                  type="text" 
+                  name="botcheck" 
+                  style={{ display: 'none' }} 
+                  value={values.botcheck}
+                  onChange={handleChange}
+                />
+
                 <div className="field">
                   <label htmlFor="name">
                     Name <span aria-hidden="true" className="field__required">*</span>
@@ -230,47 +238,27 @@ export function Contact() {
                     aria-describedby={describedBy('message')}
                     required
                   />
-                  <div className="field__foot">
-                    {errors.message ? (
-                      <p className="field__error" id="message-error">
-                        {errors.message}
-                      </p>
-                    ) : (
-                      <span />
-                    )}
-                    <span className="field__count mono-label">
-                      {values.message.length} / {MESSAGE_MAX}
-                    </span>
-                  </div>
+                  {errors.message && (
+                    <p className="field__error" id="message-error">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
-                {/* Honeypot — hidden from people, visible to bots. */}
-                <input
-                  type="checkbox"
-                  name="botcheck"
-                  className="visually-hidden"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  onChange={(event) =>
-                    setValues((current) => ({
-                      ...current,
-                      botcheck: event.target.checked ? 'bot' : '',
-                    }))
-                  }
-                />
+                <button 
+                  type="submit" 
+                  className="contact__submit" 
+                  disabled={status === 'submitting'}
+                >
+                  {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                  <Send size={16} style={{ marginLeft: '8px', display: 'inline' }} />
+                </button>
 
                 {status === 'error' && (
-                  <p className="contact__form-error" role="alert">
-                    The message didn't send. Email me directly at{' '}
-                    <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+                  <p className="field__error" style={{ marginTop: '1rem' }}>
+                    Something went wrong. Please try again or email me directly.
                   </p>
                 )}
-
-                <button type="submit" className="contact__submit" disabled={status === 'submitting'}>
-                  {status === 'submitting' ? 'Sending…' : 'Send message'}
-                  <Send size={14} strokeWidth={2} aria-hidden="true" />
-                </button>
               </form>
             )}
           </div>

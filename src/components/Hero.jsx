@@ -39,7 +39,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
             >
-              Résumé
+              Resume
               <ExternalLink size={14} strokeWidth={2} aria-hidden="true" />
             </a>
           </div>

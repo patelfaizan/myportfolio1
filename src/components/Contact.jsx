@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading'
 import './Contact.css'
 
 const MESSAGE_MAX = 1500
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-z]{2,}\$/i
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
 const ENDPOINT = 'https://api.web3forms.com/submit'
 
 const EMPTY = { name: '', email: '', message: '', botcheck: '' }

@@ -80,7 +80,7 @@ export function Navbar({ theme, onToggleTheme, activeId }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Résumé
+                Resume
               </a>
             </li>
           </ul>

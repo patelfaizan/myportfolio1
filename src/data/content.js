@@ -18,16 +18,18 @@ export const profile = {
 }
 
 /** Drives the navbar, the scale rail and the scroll spy. Order = page order. */
+/** Drives the navbar, the scale rail and the scroll spy. Order = page order. */
 export const sections = [
-  { id: 'about', label: 'About', tick: '01' },
-  { id: 'experience', label: 'Experience', tick: '02' },
-  { id: 'projects', label: 'Projects', tick: '03' },
-  { id: 'skills', label: 'Skills', tick: '04' },
-  { id: 'certifications', label: 'Certificates', tick: '05' },
-  { id: 'education', label: 'Education', tick: '06' },
-  { id: 'profile', label: null, tick: '07' },
-  { id: 'contact', label: 'Contact', tick: '08' },
+  { id: 'about', label: 'About', tick: 'ABOUT' },
+  { id: 'experience', label: 'Experience', tick: 'EXP' },
+  { id: 'projects', label: 'Projects', tick: 'PROJ' },
+  { id: 'skills', label: 'Skills', tick: 'SKILLS' },
+  { id: 'certifications', label: 'Certificates', tick: 'CERT' },
+  { id: 'education', label: 'Education', tick: 'EDU' },
+  { id: 'profile', label: null, tick: 'PROFILE' },
+  { id: 'contact', label: 'Contact', tick: 'CONTACT' },
 ]
+
 
 export const specStrip = [
   { label: 'Discipline', value: 'Mechanical Engineering' },

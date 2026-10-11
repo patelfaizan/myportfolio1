@@ -137,10 +137,6 @@ export function Contact() {
                 <a href={`mailto:${profile.email}`}>{profile.email}</a>
               </li>
               <li>
-                <span className="mono-label">Phone</span>
-                <a href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
-              </li>
-              <li>
                 <span className="mono-label">Location</span>
                 <span>{profile.location}</span>
               </li>

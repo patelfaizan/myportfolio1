@@ -12,8 +12,6 @@ export const profile = {
   location: 'Bengaluru, Karnataka, India',
   locationShort: 'Bengaluru, Karnataka',
   email: 'Patelfaizan0602@gmail.com',
-  phone: '+91 63661 71427',
-  phoneHref: '+916366171427',
   linkedin: 'https://www.linkedin.com/in/patelfaizan',
   github: 'https://github.com/patelfaizan',
   status: 'Open to work',

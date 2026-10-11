@@ -106,33 +106,32 @@ export function Navbar({ theme, onToggleTheme, activeId }) {
       </div>
 
       {menuOpen && (
-        <div className="navbar__panel" id="mobile-menu" ref={panelRef}>
-          <div className="navbar__panel-inner shell">
-            <ul className="navbar__panel-list">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a href={`#${item.id}`} onClick={closeMenu}>
-                    <span className="navbar__panel-tick mono-label">{item.tick}</span>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a href={resumeHref} target="_blank" rel="noreferrer" onClick={closeMenu}>
-                  <span className="navbar__panel-tick mono-label">PDF</span>
-                  Resume
+      <div className="navbar__panel" id="mobile-menu" ref={panelRef}>
+        <div className="navbar__panel-inner shell">
+          <ul className="navbar__panel-list">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} onClick={closeMenu}>
+                  {/* Removed the manual item.tick tag */}
+                  {item.label}
                 </a>
               </li>
-              <li>
-                <a href="#contact" onClick={closeMenu}>
-                  <span className="navbar__panel-tick mono-label">CONTACT</span>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+            ))}
+            <li>
+              <a href={resumeHref} target="_blank" rel="noreferrer" onClick={closeMenu}>
+                Resume
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onClick={closeMenu}>
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
-      )}
+      </div>
+    )}
+
     </header>
   )
 }

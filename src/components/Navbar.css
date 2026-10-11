@@ -158,6 +158,16 @@
   padding-block: 28px 48px;
 }
 
+/* 1. Reset the layout sequence numbering on the parent list container */
+.navbar__panel-list {
+  counter-reset: mobile-nav-counter; 
+}
+
+/* 2. Target list elements and increment the counter index value */
+.navbar__panel-list li {
+  counter-increment: mobile-nav-counter;
+}
+
 .navbar__panel-list li + li {
   border-top: 1px solid var(--line);
 }
@@ -173,8 +183,15 @@
   color: var(--ink);
 }
 
-.navbar__panel-tick {
+/* 3. Inject the clean numbering prefix right before the text links */
+.navbar__panel-list a::before {
+  content: counter(mobile-nav-counter, decimal-leading-zero);
   min-width: 62px;
   color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
+
 
